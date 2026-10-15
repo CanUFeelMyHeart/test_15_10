@@ -1,0 +1,26 @@
+1  name: CI
+2
+3  on:
+4    push:
+5      branches: [ main ]
+6    pull_request:
+7      branches: [ main ]
+8
+9  jobs:
+10   test:
+11     runs-on: ubuntu-latest
+12
+13     steps:
+14       - name: Скачать код
+15         uses: actions/checkout@v4
+16
+17       - name: Установить Python
+18         uses: actions/setup-python@v5
+19         with:
+20           python-version: "3.12"
+21
+22       - name: Установить зависимости
+23         run: pip install -r requirements.txt
+24
+25       - name: Запустить тесты
+26         run: pytest
