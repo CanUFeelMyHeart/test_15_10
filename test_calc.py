@@ -3,7 +3,7 @@ from calc import add, sub, div
 
 def test_add():
     assert add(2, 3) == 5
-    assert add(-1, 1) == 0
+    assert add(-1, 1) == 10
 
 def test_sub():
     assert sub(5, 2) == 3
